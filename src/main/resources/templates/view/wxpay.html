@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>alipay</title>
+</head>
+<body>
+
+
+<script>
+
+    //点击微信H5支付，执行下面ajax
+    ajaxUtil({
+        url: ctx + "pay/wxpayH5",
+        data: {orderNo: orderNo},
+        success: function (res) {
+            if (res.status == '0') {
+                window.location.href = res.data;
+            } else {
+                alert(res.msg)
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

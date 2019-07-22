@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>alipay</title>
+</head>
+<body>
+    <div id="payform"><div>
+        //点击H5支付，执行下面ajax
+        <script>
+            ajaxUtil({
+                url: ctx + "pay/alipayH5",
+                data: {orderNo:orderNo},
+                success: function (res) {
+                    if(res.status == '0'){
+                        $("#payform").html(res.data);
+                    }else{
+                        alert(res.msg)
+                    }
+                }
+            });
+
+        </script>
+</body>
+</html>
